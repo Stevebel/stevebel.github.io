@@ -30,6 +30,10 @@ jobs:
         with:
           node-version: 16
           cache: 'npm'
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Activate Stable Yarn
+        run: corepack prepare yarn@stable --activate
       - name: Yarn Install
         run: yarn install --frozen-lockfile
       - name: Yarn Build  
